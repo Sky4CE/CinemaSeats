@@ -30,9 +30,11 @@ namespace CinemaSeats.Infrastructure.Persistence
             _dateTime = dateTime;
         }
 
-        public DbSet<TodoList> TodoLists { get; set; }
+        public DbSet<SeatsMap> SeatsMaps { get; set; }
 
-        public DbSet<TodoItem> TodoItems { get; set; }
+        public DbSet<Row> Rows { get; set; }
+
+        public DbSet<Seat> Seats { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {

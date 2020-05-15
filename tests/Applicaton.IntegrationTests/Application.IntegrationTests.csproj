@@ -31,4 +31,8 @@
     <ProjectReference Include="..\..\src\WebUI\WebUI.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="BookSeats\Commands\" />
+  </ItemGroup>
+
 </Project>

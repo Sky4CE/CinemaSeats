@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
+using CinemaSeats.Application.BookSeats.Queries.GetSeats;
 using CinemaSeats.Application.Common.Mappings;
-using CinemaSeats.Application.TodoLists.Queries.GetTodos;
 using CinemaSeats.Domain.Entities;
 using NUnit.Framework;
 using System;
@@ -29,8 +29,9 @@ namespace CinemaSeats.Application.UnitTests.Common.Mappings
         }
         
         [Test]
-        [TestCase(typeof(TodoList), typeof(TodoListDto))]
-        [TestCase(typeof(TodoItem), typeof(TodoItemDto))]
+        [TestCase(typeof(SeatsMap), typeof(SeatsMapDto))]
+        [TestCase(typeof(Row), typeof(RowDto))]
+        [TestCase(typeof(Seat), typeof(SeatDto))]
         public void ShouldSupportMappingFromSourceToDestination(Type source, Type destination)
         {
             var instance = Activator.CreateInstance(source);

@@ -1,0 +1,28 @@
+<p>Choose available seats on a seating plan.</p>
+<p *ngIf="!vm"><em>Loading...</em></p>
+<div *ngIf="vm">
+  <div class="row">
+    <div class="col-sm-8">
+      <ng-container *ngFor="let row of vm.seatsMap.rows">
+        <br>
+        <label><b>{{row.rowTitle}}</b></label>
+        <ng-container *ngFor="let seat of row.seats">
+          <label>{{seat.seatTitle}}
+            <input type="checkbox" [(ngModel)]="seat.booked" [disabled]="seat.booked && seat.bookConfirmed" (change)="seatPick()"/>
+          </label>
+        </ng-container>
+      </ng-container>
+    </div>
+    <div class="col-sm-4">
+      <div *ngIf="pendingSeats.length > 0">
+        <p>You are going to book seats:</p>
+        <ng-container *ngFor="let pendingSeat of pendingSeats">
+          <br>
+          <span>Row: {{pendingSeat.row}} </span>
+          <span>Seat: {{pendingSeat.seat}} </span>
+        </ng-container>
+      </div>
+      <button class="btn btn-primary" [disabled]="!allowBookSeats()" (click)="bookSeats()">Book</button>
+    </div>
+  </div>
+</div>

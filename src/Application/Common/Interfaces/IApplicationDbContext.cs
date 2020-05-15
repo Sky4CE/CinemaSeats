@@ -7,9 +7,11 @@ namespace CinemaSeats.Application.Common.Interfaces
 {
     public interface IApplicationDbContext
     {
-        DbSet<TodoList> TodoLists { get; set; }
+        DbSet<SeatsMap> SeatsMaps { get; set; }
 
-        DbSet<TodoItem> TodoItems { get; set; }
+        DbSet<Row> Rows { get; set; }
+
+        DbSet<Seat> Seats { get; set; }
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }

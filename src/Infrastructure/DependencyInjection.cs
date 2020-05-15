@@ -1,5 +1,4 @@
 ﻿using CinemaSeats.Application.Common.Interfaces;
-using CinemaSeats.Infrastructure.Files;
 using CinemaSeats.Infrastructure.Identity;
 using CinemaSeats.Infrastructure.Persistence;
 using CinemaSeats.Infrastructure.Services;
@@ -37,7 +36,6 @@ namespace CinemaSeats.Infrastructure
 
             services.AddTransient<IDateTime, DateTimeService>();
             services.AddTransient<IIdentityService, IdentityService>();
-            services.AddTransient<ICsvFileBuilder, CsvFileBuilder>();
 
             services.AddAuthentication()
                 .AddIdentityServerJwt();
